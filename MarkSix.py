@@ -7,12 +7,17 @@ from sklearn.preprocessing import StandardScaler
 data = np.loadtxt('data.csv', delimiter=',')
 
 # 分割输入和输出
-X = data[:, :-6] # 历史数据
-temperature = data[:, -5].reshape(-1, 1) # 温度特征
-humidity = data[:, -4].reshape(-1, 1) # 湿度特征
-sunrise = data[:, -3].reshape(-1, 1) # 日出时间特征
-sunset = data[:, -2].reshape(-1, 1) # 日落时间特征
-tide = data[:, -1].reshape(-1, 1) # 潮汐高度特征
+y1 = data[:, -6].values # 第一个开奖号码
+y2 = data[:, -5].values # 第二个开奖号码
+y3 = data[:, -4].values # 第三个开奖号码
+y4 = data[:, -3].values # 第四个开奖号码
+y5 = data[:, -2].values # 第五个开奖号码
+y6 = data[:, -1].values # 第六个开奖号码
+temperature = data[:, -7].reshape(-1, 1) # 温度特征
+humidity = data[:, -8].reshape(-1, 1) # 湿度特征
+sunrise = data[:, -9].reshape(-1, 1) # 日出时间特征
+sunset = data[:, -10].reshape(-1, 1) # 日落时间特征
+tide = data[:, -11].reshape(-1, 1) # 潮汐高度特征
 
 # 对特征进行标准化处理
 scaler = StandardScaler()
