@@ -2,6 +2,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, BatchNormalization
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 
 # 加载历史数据
 data = np.loadtxt('data.csv', delimiter=',')
