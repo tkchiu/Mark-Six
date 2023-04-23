@@ -18,7 +18,8 @@ temperature = data[:, 7].reshape(-1, 1) # 温度特征
 humidity = data[:, 8].reshape(-1, 1) # 湿度特征
 sunrise = data[:, 9].reshape(-1, 1) # 日出时间特征
 sunset = data[:, 10].reshape(-1, 1) # 日落时间特征
-tide = data[:, 11].reshape(-1, 1) # 潮汐高度特征
+moonrise = data[:, 11].reshape(-1, 1) # 月出时间特征
+moonrise = data[:, 12].reshape(-1, 1) # 月落时间特征
 
 # 对特征进行标准化处理
 scaler = StandardScaler()
