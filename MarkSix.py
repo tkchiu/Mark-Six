@@ -19,7 +19,7 @@ humidity = data[:, 8].reshape(-1, 1) # 湿度特征
 sunrise = data[:, 9].reshape(-1, 1) # 日出时间特征
 sunset = data[:, 10].reshape(-1, 1) # 日落时间特征
 moonrise = data[:, 11].reshape(-1, 1) # 月出时间特征
-moonrise = data[:, 12].reshape(-1, 1) # 月落时间特征
+moonset = data[:, 12].reshape(-1, 1) # 月落时间特征
 
 # 对特征进行标准化处理
 scaler = StandardScaler()
@@ -28,10 +28,11 @@ temperature = scaler.fit_transform(temperature)
 humidity = scaler.fit_transform(humidity)
 sunrise = scaler.fit_transform(sunrise)
 sunset = scaler.fit_transform(sunset)
-tide = scaler.fit_transform(tide)
+moonrise = scaler.fit_transform(moonrise)
+moonset = scaler.fit_transform(moonrise)
 
 # 合并所有特征
-X = np.hstack((X, temperature, humidity, sunrise, sunset, tide))
+X = np.hstack((X, temperature, humidity, sunrise, sunset, moonrise, moonset))
 
 # 将输出转换为分类问题
 y = np.zeros((data.shape[0], 49))
