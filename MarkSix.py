@@ -8,18 +8,18 @@ from sklearn.model_selection import train_test_split
 data = np.loadtxt('data.csv', delimiter=',')
 
 # 分割输入和输出
-y1 = data[:, 1].values # 第一个开奖号码
-y2 = data[:, 2].values # 第二个开奖号码
-y3 = data[:, 3].values # 第三个开奖号码
-y4 = data[:, 4].values # 第四个开奖号码
-y5 = data[:, 5].values # 第五个开奖号码
-y6 = data[:, 6].values # 第六个开奖号码
-temperature = data[:, 7].reshape(-1, 1) # 温度特征
-humidity = data[:, 8].reshape(-1, 1) # 湿度特征
-sunrise = data[:, 9].reshape(-1, 1) # 日出时间特征
-sunset = data[:, 10].reshape(-1, 1) # 日落时间特征
-moonrise = data[:, 11].reshape(-1, 1) # 月出时间特征
-moonset = data[:, 12].reshape(-1, 1) # 月落时间特征
+y1 = data[:, -1].values # 第一个开奖号码
+y2 = data[:, -2].values # 第二个开奖号码
+y3 = data[:, -3].values # 第三个开奖号码
+y4 = data[:, -4].values # 第四个开奖号码
+y5 = data[:, -5].values # 第五个开奖号码
+y6 = data[:, -6].values # 第六个开奖号码
+temperature = data[:, -7].reshape(-1, 1) # 温度特征
+humidity = data[:, -8].reshape(-1, 1) # 湿度特征
+sunrise = data[:, -9].reshape(-1, 1) # 日出时间特征
+sunset = data[:, -10].reshape(-1, 1) # 日落时间特征
+moonrise = data[:, -11].reshape(-1, 1) # 月出时间特征
+moonset = data[:, -12].reshape(-1, 1) # 月落时间特征
 
 # 对特征进行标准化处理
 scaler = StandardScaler()
