@@ -20,7 +20,6 @@ sunrise = data[:, -9].reshape(-1, 1) # 日出时间特征
 sunset = data[:, -10].reshape(-1, 1) # 日落时间特征
 moonrise = data[:, -11].reshape(-1, 1) # 月出时间特征
 moonset = data[:, -12].reshape(-1, 1) # 月落时间特征
-sumcount = data[:, -13].reshape(-1, 1) # 开奖号码總和特征
 
 # 对特征进行标准化处理
 scaler = StandardScaler()
@@ -31,10 +30,9 @@ sunrise = scaler.fit_transform(sunrise)
 sunset = scaler.fit_transform(sunset)
 moonrise = scaler.fit_transform(moonrise)
 moonset = scaler.fit_transform(moonset)
-sumcount = scaler.fit_transform(sumcount)
 
 # 合并所有特征
-X = np.hstack((X, temperature, humidity, sunrise, sunset, moonrise, moonset, sumcount))
+X = np.hstack((X, temperature, humidity, sunrise, sunset, moonrise, moonset))
 
 # 将输出转换为分类问题
 y = np.zeros((data.shape[0], 49))
