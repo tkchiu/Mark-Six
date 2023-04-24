@@ -67,7 +67,7 @@ print('Test loss:', loss)
 print('Test accuracy:', accuracy)
 
 # 使用模型
-new_data = np.array([[temperature, humidity, sunrise_time, sunset_time, tide_height]])
+new_data = np.array([[temperature, humidity, sunrise, sunset, moonrise, moonset]])
 new_data = sc.transform(new_data)
 prediction = model.predict(new_data)
 print(prediction)
